@@ -9,6 +9,15 @@ interface Teacher {
   [key: string]: any;
 }
 
-export interface Directors extends Teacher {
+interface Directors extends Teacher {
   numberOfReports: number;
+}
+
+function printTeacher({firstName, lastName}: Teacher) {
+  // Returns first character of first name and last name
+  return `${firstName.slice(0, 1)}. ${lastName}`;
+}
+
+interface printTeacherFunction {
+  (firstName: string, lastName: string): string;
 }
