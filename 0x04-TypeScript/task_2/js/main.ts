@@ -1,6 +1,8 @@
 // 2 Interfaces with methods
 // 2 classes with interfaces
 // Function (with interface presumably?)
+// Function to test which class instance is
+// Function that uses previous function and calls class methods
 
 interface DirectorInterface {
   // Interface to validate returns of Director class methods
@@ -60,4 +62,17 @@ function createEmployee(salary: number | string) {
     return new Teacher();
   }
   return new Director();
+}
+
+function isDirector(employee: Director | Teacher): employee is Director {
+  // Function that returns which class employee is - True if Director
+  return (employee instanceof Director);
+}
+
+function executeWork(employee: Director | Teacher) {
+  // Calls class method depending on class of employee
+  if (isDirector(employee)) {
+    return employee.workDirectorTasks();
+  }
+  return employee.workTeacherTasks();
 }
