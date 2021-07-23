@@ -9,3 +9,4 @@ Projects focusing on React JavaScript library
 ### TypeScript
 
 #### 0x04-TypeScript
+- Run "npm install" to set up environment then "npm run start-dev" to run
