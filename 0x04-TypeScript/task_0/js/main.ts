@@ -25,10 +25,7 @@ let student2: Student = {
 
 let studentsList: Array<Student> = [student1, student2];
 
-// for (student of studentsList) {
-//   console.log(student)
-// }
-
-studentsList.forEach(student => {
-    console.log(student);
-})
+// // Loop below is not part of the task, just my own check if I did it correctly
+// studentsList.forEach(student => {
+//     console.log(student);
+// })
