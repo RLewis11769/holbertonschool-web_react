@@ -3,6 +3,8 @@
 // Function (with interface presumably?)
 // Function to test which class instance is
 // Function that uses previous function and calls class methods
+// String literal type
+// Function using string literal type
 
 interface DirectorInterface {
   // Interface to validate returns of Director class methods
@@ -75,4 +77,15 @@ function executeWork(employee: Director | Teacher) {
     return employee.workDirectorTasks();
   }
   return employee.workTeacherTasks();
+}
+
+// String literal type with two possible values
+type Subjects = 'Math' | 'History';
+
+function teachClass(todayClass: Subjects): string {
+  // Returns string based on which Subject passed in
+  if (todayClass === 'Math') {
+    return 'Teaching Math';
+  }
+  return 'Teaching History';
 }
