@@ -1,5 +1,6 @@
+// Update counter based on button click - no spamming allowed
 import $ from "jquery";
-const _ = require('lodash');
+const _ = require("lodash");
 
 $("body").append("<p>Holberton Dashboard</p>");
 $("body").append("<p>Dashboard data for the students</p>");
@@ -10,7 +11,7 @@ $("body").append("<p>Copyright - Holberton School</p>");
 let count = 0;
 function updateCounter() {
   // Update count p tag based on button click below
-  $("#count").html(count += 1);
+  $("#count").text(count += 1);
 };
 
 // Won't allow click spamming - one per second
