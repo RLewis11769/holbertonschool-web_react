@@ -11,8 +11,9 @@ $("body").append("<p>Copyright - Holberton School</p>");
 let count = 0;
 function updateCounter() {
   // Update count p tag based on button click below
-  $("#count").text(count += 1);
+  count += 1;
+  $("#count").text(`${count} clicks on the button`);
 };
 
 // Won't allow click spamming - one per second
-$('button').on('click', _.debounce(updateCounter, 1000));
+$("button").on("click", _.debounce(updateCounter, 300));
