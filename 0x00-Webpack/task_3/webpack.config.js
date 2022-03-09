@@ -37,6 +37,7 @@ module.exports = {
   },
   // Starts dev server on port 8564 (in development mode)
   devServer: {
+    contentBase: path.join(__dirname, './public'),
     compress: true,
     port: 8564,
   },
@@ -48,6 +49,7 @@ module.exports = {
   ],
   // Generate source map (this option is slow for publishing one file but maintains quality)
   devtool: 'inline-source-map',
+  // Optimize by splitting module into smaller chunks
   optimization: {
     splitChunks: {
       chunks: 'all',
