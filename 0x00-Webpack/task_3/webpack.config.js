@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -10,6 +11,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'public'),
+    // Name maps to key in entry
     filename: '[name].bundle.js',
   },
   module: {
@@ -33,9 +35,22 @@ module.exports = {
       },
     ],
   },
+  // Starts dev server on port 8564 (in development mode)
   devServer: {
     compress: true,
     port: 8564,
   },
-  plugins: [new HtmlWebpackPlugin()],
+  plugins: [
+    // Automatically creates index.html file
+    new HtmlWebpackPlugin(),
+    // Cleans folder before building
+    new CleanWebpackPlugin(),
+  ],
+  // Generate source map (this option is slow for publishing one file but maintains quality)
+  devtool: 'inline-source-map',
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
 };
