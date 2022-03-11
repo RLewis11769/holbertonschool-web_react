@@ -10,9 +10,9 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, '../dist'),
     hot: true,
-    static: [ "dist" ],
     compress: true,
   },
+  "devtool": "inline-source-map",
   module: {
     rules: [
       {
