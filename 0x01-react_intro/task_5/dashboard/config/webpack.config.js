@@ -12,7 +12,7 @@ module.exports = {
     hot: true,
     compress: true,
   },
-  "devtool": "inline-source-map",
+  devtool: "inline-source-map",
   module: {
     rules: [
       {
