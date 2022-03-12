@@ -1,57 +1,98 @@
-// Create object with optional parameters
-// Create object extending other object
-// Create function with interface
-// Create class with interface and constructor interface
+// Defines teacher/director object and functions (and interfaces)
+// Defines student class (and interfaces)
 
-interface Teacher {
-  // Parent interface
+/* TEACHER */
+export interface Teacher {
+  // Interface for Teacher object (and parent interface for Directors)
   readonly firstName: string;
   readonly lastName: string;
   fullTimeEmployee: boolean;
   yearsOfExperience?: number;
   location: string;
+  // Optional parameter of any type - could be multiple
   [key: string]: any;
 }
 
-interface Directors extends Teacher {
-  // Child interface
+// const t1: Teacher = {
+//   firstName: 'Shadow',
+//   fullTimeEmployee: false,
+//   lastName: 'Lewis',
+//   location: 'Earth',
+//   // Note: contract is optional parameter
+//   contract: false
+// };
+// console.log(t1);
+
+
+/* DIRECTOR */
+export interface Directors extends Teacher {
+  // Child interface with all properties from Teacher
   numberOfReports: number;
 }
 
-function printTeacher({firstName, lastName}: Teacher) {
-  // Returns first character of first name and last name
-  return `${firstName.slice(0, 1)}. ${lastName}`;
-}
+// const d1: Directors = {
+//   firstName: 'Vader',
+//   lastName: 'Lewis',
+//   location: 'Mustafar',
+//   fullTimeEmployee: true,
+//   numberOfReports: 17,
+// };
+// console.log(d1);
 
-interface printTeacherFunction {
-  // Describes required keys/values passed into printTeacher function
-  // Describes return as string
+
+/* SHARED */
+export interface printTeacherFunction {
+  // Describes arguments and return of printTeacher function
+  // Note: not explicitly referenced in function
   (firstName: string, lastName: string): string;
 }
 
-interface StudentInterface {
-  // Describes keys/values of instance methods passed into StudentClass class
-  firstName: string;
-  lastName: string;
+function printTeacher({firstName, lastName}: Teacher): string {
+  // Returns first character of first name and last name - as string
+  // Notice args are destructured args from Teacher interface
+  return `${firstName.slice(0, 1)}. ${lastName}`;
 }
 
-interface StudentConstructor {
-  // Describes required keys/values passed into StudentClass constructor
-  new (firstName: string, lastName: string): StudentInterface;
+// console.log(printTeacher(d1));
+
+
+/* STUDENT */
+export interface StudentClassInterface {
+  // Describes returns of methods for StudentClass class
+  workOnHomework(): string;
+  displayName(): string;
 }
 
-class StudentClass implements StudentInterface {
+export interface StudentClassConstructor {
+  // Describes types of args passed into StudentClass constructor
+  // Note: not explicitly referenced in constructor
+  new (firstName: string, lastName: string): StudentClassInterface;
+}
+
+export class StudentClass implements StudentClassInterface {
   // Attributes and methods of StudentClass class
 
-  constructor(firstName: string, lastName: string) {}
+  // Defines attributes required when new instance of StudentClass is created
+  firstName: string;
+  lastName: string;
+
+  constructor(firstName: string, lastName: string) {
+    // Sets attributes when new instance of StudentClass is created
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
 
   workOnHomework() {
-    // Returns string when called
+    // Returns string when called (as described in StudentInterface)
     return 'Currently working';
   }
 
   displayName() {
-    // Returns string when called
+    // Returns string when called (as described in StudentInterface)
     return this.firstName;
   }
 }
+
+const s1 = new StudentClass('Hello', 'World');
+console.log(s1);
+console.log(s1.workOnHomework());
