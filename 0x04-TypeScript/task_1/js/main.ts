@@ -12,7 +12,6 @@ export interface Teacher {
   // Optional parameter of any type - could be multiple
   [key: string]: any;
 }
-
 // const t1: Teacher = {
 //   firstName: 'Shadow',
 //   fullTimeEmployee: false,
@@ -29,7 +28,6 @@ export interface Directors extends Teacher {
   // Child interface with all properties from Teacher
   numberOfReports: number;
 }
-
 // const d1: Directors = {
 //   firstName: 'Vader',
 //   lastName: 'Lewis',
@@ -52,7 +50,6 @@ function printTeacher({firstName, lastName}: Teacher): string {
   // Notice args are destructured args from Teacher interface
   return `${firstName.slice(0, 1)}. ${lastName}`;
 }
-
 // console.log(printTeacher(d1));
 
 
@@ -69,7 +66,7 @@ export interface StudentClassConstructor {
   new (firstName: string, lastName: string): StudentClassInterface;
 }
 
-export class StudentClass implements StudentClassInterface {
+class StudentClass implements StudentClassInterface {
   // Attributes and methods of StudentClass class
 
   // Defines attributes required when new instance of StudentClass is created
@@ -92,7 +89,6 @@ export class StudentClass implements StudentClassInterface {
     return this.firstName;
   }
 }
-
-const s1 = new StudentClass('Hello', 'World');
-console.log(s1);
-console.log(s1.workOnHomework());
+// const s1 = new StudentClass('Hello', 'World');
+// console.log(s1);
+// console.log(s1.workOnHomework());
