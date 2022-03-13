@@ -1,30 +1,37 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   mode: 'development',
   entry: {
+    // Note: entry paths are relative
     header: './modules/header/header.js',
     body: './modules/body/body.js',
     footer: './modules/footer/footer.js',
   },
   output: {
+    // Note: output paths are absolute
     path: path.resolve(__dirname, 'public'),
-    // Name maps to key in entry
+    // Maps output to name key file in entry
     filename: '[name].bundle.js',
   },
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: [  'style-loader', 'css-loader' ],
+        // Rather than injecting like file-loader, adds scripts to index.html
+        use: [ MiniCssExtractPlugin.loader, 'css-loader' ],
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/,
         use: [
           'file-loader',
           {
+            // Not sure I'd consider this optimized but no errors?
             loader: 'image-webpack-loader',
             options: {
               bypassOnDebug: true,
@@ -37,7 +44,7 @@ module.exports = {
   },
   // Starts dev server on port 8564 (in development mode)
   devServer: {
-    contentBase: path.join(__dirname, './public'),
+    static: path.join(__dirname, 'public'),
     compress: true,
     port: 8564,
   },
@@ -46,6 +53,8 @@ module.exports = {
     new HtmlWebpackPlugin(),
     // Cleans folder before building
     new CleanWebpackPlugin(),
+    // Plugin to minify css
+    new MiniCssExtractPlugin()
   ],
   // Generate source map (this option is slow for publishing one file but maintains quality)
   devtool: 'inline-source-map',
@@ -54,5 +63,13 @@ module.exports = {
     splitChunks: {
       chunks: 'all',
     },
+    minimizer: [
+      // Minimize CSS files
+      new CssMinimizerPlugin(),
+      // Minimize JS files - don't typically have to, but CSS minifying overrides
+      new TerserPlugin(),
+    ],
+    // Above minimizing is for production - this is for devServer
+    minimize: true,
   },
 };
