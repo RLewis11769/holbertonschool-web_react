@@ -18,6 +18,7 @@ module.exports = {
     path: path.resolve(__dirname, 'public'),
     // Maps output to name key file in entry
     filename: '[name].bundle.js',
+    assetModuleFilename: '[name][ext]',
   },
   module: {
     rules: [
@@ -27,16 +28,13 @@ module.exports = {
         use: [ MiniCssExtractPlugin.loader, 'css-loader' ],
       },
       {
-        test: /\.(jpe?g|png|gif|svg)$/,
+        test: /\.(jpe?g|png|gif|svg)$/i,
         use: [
-          'file-loader',
           {
-            // Not sure I'd consider this optimized but no errors?
             loader: 'image-webpack-loader',
             options: {
-              bypassOnDebug: true,
-              disable: true,
-            },
+              limit: 8192,
+            }
           },
         ],
       },
