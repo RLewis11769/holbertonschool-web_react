@@ -8,12 +8,13 @@ describe('App component', () => {
   // Tests for App component in App.js
 
   it('Verifies that App component renders without crashing', () => {
-    const wrapper = shallow(<App />);
-    assert.equal
+    shallow(<App />);
   });
 
   test("App-header class exists", () => {
-    shallow(<App />);
+    const wrapper = shallow(<App />);
+    const appWrapper = wrapper.find('.App-header');
+    assert.equal(appWrapper.length, 1);
   });
 
   test("App-body class exists", () => {
