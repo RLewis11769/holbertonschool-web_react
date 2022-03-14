@@ -1,0 +1,33 @@
+:root {
+	--holbie-red: #e11d3f;
+	--img-size: 20rem;
+}
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+	font-size: 62.5%;
+}
+
+body {
+	font-family: 'Verdana', sans-serif;
+	margin: 2rem;
+}
+
+p {
+	font-size: 1.6rem;
+}
+
+h1 {
+	font-size: 3.5rem;
+}
+
+/* Body */
+
+.App-body {
+	margin-left: 5rem;
+	margin-top: 5rem;
+}
