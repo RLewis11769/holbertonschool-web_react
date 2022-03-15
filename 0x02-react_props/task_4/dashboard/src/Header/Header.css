@@ -1,8 +1,7 @@
 .App-header {
+  color: var(--holbie-red);
   display: flex;
   align-items: center;
-  color: var(--holbie-red);
-  border-bottom: 3px var(--holbie-red) solid;
 }
 
 .App-header img {
@@ -12,4 +11,5 @@
 
 .App-header h1 {
   display: inline;
+  margin-left: 1rem;
 }

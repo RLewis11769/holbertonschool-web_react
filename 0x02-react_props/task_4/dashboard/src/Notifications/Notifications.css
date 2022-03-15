@@ -1,12 +1,6 @@
-div {
-  margin: 1.5rem;
-  padding: 1rem;
-}
-
-.Notifications {
-  border: 1px red dashed;
-  padding: 1rem;
-  margin: 0;
+/* Bullet Points */
+li {
+  font-size: var(--p-size);
 }
 
 li[data-priority="default"] {
@@ -15,4 +9,26 @@ li[data-priority="default"] {
 
 li[data-priority="urgent"] {
   color: red;
+}
+
+/* Entire Notifications component */
+#Notif {
+  display: flex;
+  flex-direction: column;
+  float: right;
+  margin-right: 1rem;
+}
+
+/* "Your notifications" */
+.menuItem {
+  align-self: flex-end;
+  font-size: var(--p-size);
+  margin-bottom: 1rem;
+}
+
+/* List of notifications */
+.Notifications {
+  border: 1px red dashed;
+  padding: 1rem;
+  padding-right: 10rem;
 }

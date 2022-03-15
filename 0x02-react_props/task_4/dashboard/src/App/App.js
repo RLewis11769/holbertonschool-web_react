@@ -7,7 +7,7 @@ import CourseList from "../CourseList/CourseList";
 import Login from "../Login/Login";
 import Footer from "../Footer/Footer";
 
-App.PropTypes = {
+App.propTypes = {
   isLoggedIn: PropTypes.bool,
 };
 

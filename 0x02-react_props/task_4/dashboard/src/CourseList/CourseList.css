@@ -1,3 +1,27 @@
-tbody {
-  background-color: palegreen;
+/* Entire component */
+table {
+  margin-left: 2.5rem;
+  margin-top: 5rem;
+  border: var(--border);
+  width: 100%;
+  text-align: left;
+}
+
+/* Table head */
+thead {
+  font-weight: bold;
+}
+
+th {
+  border-bottom: var(--border);
+  padding: 0.5rem;
+}
+
+thead tr:first-child {
+  text-align: center;
+}
+
+/* Table body */
+td {
+  padding: 0.5rem;
 }

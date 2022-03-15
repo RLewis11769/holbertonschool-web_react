@@ -15,8 +15,8 @@ Notifications.defaultProps = {
 
 export default function Notifications({ displayDrawer }) {
   return (
-    <>
-      <div className='menuItem'>Your notifications</div>
+    <div id='Notif'>
+      <div className='menuItem'>Your Notifications</div>
       {displayDrawer && (
         <div className='Notifications'>
           <p>Here is the list of notifications</p>
@@ -33,10 +33,10 @@ export default function Notifications({ displayDrawer }) {
             onClick={() => console.log("Close button has been clicked")}
             style={{
               border: 0,
-              background: "white",
+              background: "transparent",
               position: "absolute",
-              right: 75,
-              top: 75,
+              right: 25,
+              top: 50,
             }}
           >
             <img
@@ -49,6 +49,6 @@ export default function Notifications({ displayDrawer }) {
           </button>
         </div>
       )}
-    </>
+    </div>
   );
 }
