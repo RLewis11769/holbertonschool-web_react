@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-NotificationItem.PropTypes = {
+NotificationItem.propTypes = {
   type: PropTypes.string,
   html: PropTypes.shape({
     __html: PropTypes.string,
