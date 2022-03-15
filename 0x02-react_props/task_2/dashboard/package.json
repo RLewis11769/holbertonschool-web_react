@@ -15,10 +15,11 @@
     "@babel/core": "^7.17.5",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
-    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.6",
     "babel-loader": "^8.2.3",
     "chai": "^4.3.6",
     "css-loader": "^6.7.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
     "file-loader": "^6.2.0",
     "image-webpack-loader": "^8.1.0",
     "jest": "^27.5.1",
@@ -28,8 +29,8 @@
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
   },
   "jest": {
     "moduleNameMapper": {

@@ -12,10 +12,15 @@ describe('NotificationItem component', () => {
   });
 
   it('Renders NotificationItem with props passed in', () => {
-    shallow(<NotificationItem type='default' value='test' />);
+    const wrapper = shallow(<NotificationItem type='default' value='test' />);
+    expect(wrapper.props().dataPriority === 'default');
+    expect(wrapper.props().dataValue === 'test');
   });
 
   it('Renders NotificationItem with props passed in', () => {
-    shallow(<NotificationItem type='urgent' html={{ __html: 'test' }} />);
+    const wrapper = shallow(<NotificationItem type='urgent' html={{ __html: '<u>test</u>' }} />);
+    expect(wrapper.props().dataPriority === 'urgent');
+    expect(wrapper.props().dataValue === 'test');
+    expect(wrapper.props().html === '<u>test</u>');
   });
 });
