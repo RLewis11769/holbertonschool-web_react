@@ -1,0 +1,64 @@
+:root {
+  --holbie-red: #e11d3f;
+  --img-size: 20rem;
+  --p-size: 1.4rem;
+  --border: 1px solid lightgrey;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Verdana", sans-serif;
+  margin: 1rem;
+}
+
+/* All fonts */
+p {
+  font-size: var(--p-size);
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+/* All labels, inputs, and buttons */
+label {
+  font-size: var(--p-size);
+}
+
+input {
+  font-size: var(--p-size);
+  border: var(--border);
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid var(--holbie-red);
+  padding: 0.5rem;
+}
+
+button {
+  border: var(--border);
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.5rem;
+}
+
+button:focus, button:hover {
+  outline: none;
+  border: 1px solid var(--holbie-red);
+}
+
+/* Main content */
+
+main {
+  border-top: 3px var(--holbie-red) solid;
+}
