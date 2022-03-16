@@ -3,11 +3,11 @@ li {
   font-size: var(--p-size);
 }
 
-li[data-priority="default"] {
+li[data-notification-type="default"] {
   color: blue;
 }
 
-li[data-priority="urgent"] {
+li[data-notification-type="urgent"] {
   color: red;
 }
 
@@ -31,4 +31,5 @@ li[data-priority="urgent"] {
   border: 1px red dashed;
   padding: 1rem;
   padding-right: 10rem;
+  padding-bottom: 2rem;
 }

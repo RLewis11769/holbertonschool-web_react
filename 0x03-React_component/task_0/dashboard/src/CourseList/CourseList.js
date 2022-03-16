@@ -4,7 +4,7 @@ import './CourseList.css';
 import CourseListRow from './CourseListRow';
 import CourseShape from './CourseShape';
 
-export default function CourseList({ listCourses }) {
+const CourseList = function CourseList({ listCourses }) {
   return (
     <table>
       <thead>
@@ -30,7 +30,7 @@ export default function CourseList({ listCourses }) {
       </tbody>
     </table>
   );
-}
+};
 
 CourseList.propTypes = {
   listCourses: PropTypes.arrayOf(CourseShape),
@@ -39,3 +39,5 @@ CourseList.propTypes = {
 CourseList.defaultProps = {
   listCourses: [],
 };
+
+export default CourseList;

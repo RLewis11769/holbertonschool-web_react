@@ -5,7 +5,7 @@ import closeIcon from '../assets/close-icon.png';
 import NotificationItem from './NotificationItem';
 import NotificationItemShape from './NotificationItemShape';
 
-export default function Notifications({ displayDrawer, listNotifications }) {
+const Notifications = function Notifications({ displayDrawer, listNotifications }) {
   return (
     <div id="Notif">
       <div className="menuItem">Your Notifications</div>
@@ -17,7 +17,7 @@ export default function Notifications({ displayDrawer, listNotifications }) {
             listNotifications.map((notif) => (
               <NotificationItem
                 key={notif.id}
-                type={notif.type}
+                type={notif.type ? notif.type : 'default'}
                 value={notif.value}
                 html={notif.html}
               />
@@ -49,7 +49,7 @@ export default function Notifications({ displayDrawer, listNotifications }) {
       )}
     </div>
   );
-}
+};
 
 Notifications.propTypes = {
   displayDrawer: PropTypes.bool,
@@ -60,3 +60,5 @@ Notifications.defaultProps = {
   displayDrawer: false,
   listNotifications: [],
 };
+
+export default Notifications;
