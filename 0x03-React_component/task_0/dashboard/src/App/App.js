@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import './App.css';
 import { getLatestNotification } from '../utils/utils';
@@ -8,42 +8,37 @@ import CourseList from '../CourseList/CourseList';
 import Login from '../Login/Login';
 import Footer from '../Footer/Footer';
 
-export default function App({ isLoggedIn }) {
-  // Course list to be shown in CourseListRow component
-  const listCourses = [
-    { id: '1', name: 'ES6', credit: 60 },
-    { id: '2', name: 'Webpack', credit: 20 },
-    { id: '3', name: 'React', credit: 40 },
-  ];
+class App extends PureComponent {
+  render() {
+    // state, variables, functions, and rendering of App component
+    const { isLoggedIn } = this.props;
 
-  // Notification list to be shown in Notifications component
-  const listNotifications = [
-    {
-      id: 1,
-      value: 'New course available',
-    },
-    {
-      id: 2,
-      type: 'urgent',
-      value: 'New resume available',
-    },
-    {
-      id: 3,
-      type: 'urgent',
-      html: { __html: getLatestNotification() },
-    },
-  ];
+    // Course list to be shown in CourseListRow component
+    const listCourses = [
+      { id: '1', name: 'ES6', credit: 60 },
+      { id: '2', name: 'Webpack', credit: 20 },
+      { id: '3', name: 'React', credit: 40 },
+    ];
 
-  return (
-    <>
-      <Notifications listNotifications={listNotifications} />
-      <Header />
-      <main className="App-body">
-        {isLoggedIn ? <CourseList listCourses={listCourses} /> : <Login />}
-      </main>
-      <Footer />
-    </>
-  );
+    // Notification list to be shown in Notifications component
+    const listNotifications = [
+      { id: 1, value: 'New course available' },
+      { id: 2, type: 'urgent', value: 'New resume available' },
+      { id: 3, type: 'urgent', html: { __html: getLatestNotification() } },
+    ];
+
+    // Actual rendering of App component
+    return (
+      <>
+        <Notifications listNotifications={listNotifications} />
+        <Header />
+        <main className="App-body">
+          {isLoggedIn ? <CourseList listCourses={listCourses} /> : <Login />}
+        </main>
+        <Footer />
+      </>
+    );
+  }
 }
 
 App.propTypes = {
@@ -53,3 +48,5 @@ App.propTypes = {
 App.defaultProps = {
   isLoggedIn: false,
 };
+
+export default App;

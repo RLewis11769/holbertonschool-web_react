@@ -27,8 +27,8 @@ describe('App component', () => {
 
   test('CourseList component exists when isLoggedIn is true', () => {
     const wrapper = shallow(<App isLoggedIn />);
-    expect(wrapper.find('CourseList')).toHaveLength(1);
-    expect(wrapper.find('Login')).toHaveLength(0);
+    expect(wrapper.exists('CourseList')).toBe(true);
+    expect(wrapper.exists('Login')).toBe(false);
   });
 
   test('Footer component exists', () => {
