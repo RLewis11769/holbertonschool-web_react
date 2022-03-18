@@ -1,27 +1,18 @@
-import React from "react";
-import PropTypes from "prop-types";
-import "./Notifications.css";
-import closeIcon from "../assets/close-icon.png";
-import NotificationItem from "./NotificationItem";
-import { NotificationItemShape } from "./NotificationItemShape";
+import React from 'react';
+import PropTypes from 'prop-types';
+import './Notifications.css';
+import closeIcon from '../assets/close-icon.png';
+import NotificationItem from './NotificationItem';
+import NotificationItemShape from './NotificationItemShape';
 
-Notifications.propTypes = {
-  displayDrawer: PropTypes.bool,
-  listNotifications: PropTypes.arrayOf(NotificationItemShape),
-};
-
-Notifications.defaultProps = {
-  displayDrawer: false,
-  listNotifications: [],
-};
-
-export default function Notifications({ displayDrawer, listNotifications }) {
+const Notifications = function Notifications({ displayDrawer, listNotifications }) {
   return (
-    <div id='Notif'>
-      <div className='menuItem'>Your Notifications</div>
+    <div id="Notif">
+      <div className="menuItem">Your Notifications</div>
       {displayDrawer && (
-        <div className='Notifications'>
-          {listNotifications.length ? <p>Here is the list of notifications</p> : <p>No new notification for now</p>}
+        <div className="Notifications">
+          {listNotifications.length ? <p>Here is the list of notifications</p>
+            : <p>No new notification for now</p>}
           {listNotifications ? (
             listNotifications.map((notif) => (
               <NotificationItem
@@ -34,38 +25,40 @@ export default function Notifications({ displayDrawer, listNotifications }) {
           ) : (
             <tr>No course available yet</tr>
           )}
-          <ul>
-          </ul>
           <button
-            aria-label='Close'
-            onClick={() => console.log("Close button has been clicked")}
+            type="button"
+            aria-label="Close"
+            onClick={() => console.log('Close button has been clicked')}
             style={{
               border: 0,
-              background: "transparent",
-              position: "absolute",
+              background: 'transparent',
+              position: 'absolute',
               right: 25,
               top: 50,
             }}
           >
             <img
               src={closeIcon}
-              border='0'
-              height='15px'
-              width='15px'
-              alt='Close'
-            ></img>
+              border="0"
+              height="15px"
+              width="15px"
+              alt="Close"
+            />
           </button>
         </div>
       )}
     </div>
   );
-}
+};
 
+Notifications.propTypes = {
+  displayDrawer: PropTypes.bool,
+  listNotifications: PropTypes.arrayOf(NotificationItemShape),
+};
 
-          {/*
-            <NotificationItem type='default' value='New course available' />
-            <NotificationItem type='urgent' value='New resume available' />
-            <NotificationItem
-              type='urgent'
-              html={{ __html: getLatestNotification() }}
-      />*/}
+Notifications.defaultProps = {
+  displayDrawer: false,
+  listNotifications: [],
+};
+
+export default Notifications;

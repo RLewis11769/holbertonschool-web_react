@@ -1,22 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-// Define types and default values of args/props
-CourseListRow.propTypes = {
-  isHeader: PropTypes.bool,
-  textFirstCell: PropTypes.string.isRequired,
-  textSecondCell: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number
-  ])
-};
-
-CourseListRow.defaultProps = {
-  isHeader: false,
-  textSecondCell: null,
-};
-
-export default function CourseListRow({
+const CourseListRow = function CourseListRow({
   isHeader,
   textFirstCell,
   textSecondCell,
@@ -40,4 +25,21 @@ export default function CourseListRow({
       )}
     </tr>
   );
-}
+};
+
+// Define types and default values of args/props
+CourseListRow.propTypes = {
+  isHeader: PropTypes.bool,
+  textFirstCell: PropTypes.string.isRequired,
+  textSecondCell: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+};
+
+CourseListRow.defaultProps = {
+  isHeader: false,
+  textSecondCell: null,
+};
+
+export default CourseListRow;

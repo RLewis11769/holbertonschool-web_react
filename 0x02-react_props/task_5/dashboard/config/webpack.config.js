@@ -12,12 +12,12 @@ module.exports = {
     hot: true,
     compress: true,
   },
-  devtool: "inline-source-map",
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: [  'style-loader', 'css-loader' ],
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/,
@@ -41,7 +41,7 @@ module.exports = {
             presets: ['@babel/preset-env', '@babel/preset-react'],
           },
         },
-      }
+      },
     ],
-  }
+  },
 };
