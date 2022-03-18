@@ -1,0 +1,35 @@
+/* Bullet Points */
+li {
+  font-size: var(--p-size);
+}
+
+li[data-notification-type="default"] {
+  color: blue;
+}
+
+li[data-notification-type="urgent"] {
+  color: red;
+}
+
+/* Entire Notifications component */
+#Notif {
+  display: flex;
+  flex-direction: column;
+  float: right;
+  margin-right: 1rem;
+}
+
+/* "Your notifications" */
+.menuItem {
+  align-self: flex-end;
+  font-size: var(--p-size);
+  margin-bottom: 1rem;
+}
+
+/* List of notifications */
+.Notifications {
+  border: 1px red dashed;
+  padding: 1rem;
+  padding-right: 10rem;
+  padding-bottom: 2rem;
+}

@@ -1,0 +1,15 @@
+.App-header {
+  color: var(--holbie-red);
+  display: flex;
+  align-items: center;
+}
+
+.App-header img {
+  height: var(--img-size);
+  width: var(--img-size);
+}
+
+.App-header h1 {
+  display: inline;
+  margin-left: 1rem;
+}
