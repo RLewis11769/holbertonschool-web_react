@@ -7,7 +7,7 @@ const CourseListRow = function CourseListRow({
   textSecondCell,
 }) {
   return (
-    <tr>
+    <tr style={{ backgroundColor: isHeader ? '#deb5b545' : '#f5f5f5ab' }}>
       {isHeader && textSecondCell === null && (
         <th colSpan={2}>{textFirstCell}</th>
       )}
