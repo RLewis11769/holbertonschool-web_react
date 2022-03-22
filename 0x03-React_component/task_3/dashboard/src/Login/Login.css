@@ -1,0 +1,12 @@
+
+
+/* Entire component */
+#Login {
+  margin-left: 2.5rem;
+  margin-top: 5rem;
+}
+
+/* Content inside component */
+.App-body input {
+  margin: 1rem;
+}
