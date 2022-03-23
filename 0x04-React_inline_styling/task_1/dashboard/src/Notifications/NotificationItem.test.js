@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { StyleSheetTestUtils } from 'aphrodite';
 import NotificationItem from './NotificationItem';
 import Notifications from './Notifications';
@@ -40,11 +40,11 @@ describe('NotificationItem component', () => {
     { id: 2, type: 'default', html: { __html: 'HTML 1' } },
   ];
   it('Verifies that markAsRead called with correct ID', () => {
-    const wrapper = shallow(<Notifications displayDrawer listNotifications={listNotifications} />);
+    const wrapper = mount(<Notifications displayDrawer listNotifications={listNotifications} />);
     const spy = jest.spyOn(wrapper.instance(), 'markAsRead');
-    wrapper.find('NotificationItem').get(0).props.markAsRead(1);
+    wrapper.find('li').first().simulate('click');
     expect(spy).toHaveBeenCalledWith(1);
-    wrapper.find('NotificationItem').get(1).props.markAsRead(2);
+    wrapper.find('li').last().simulate('click');
     expect(spy).toHaveBeenCalledWith(2);
   });
 });

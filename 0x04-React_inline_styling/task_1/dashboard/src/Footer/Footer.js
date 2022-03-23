@@ -4,7 +4,7 @@ import { getFullYear, getFooterCopy } from '../utils/utils';
 
 export default function Footer() {
   return (
-    <footer>
+    <section>
       <p>
         Copyright
         {' '}
@@ -12,6 +12,6 @@ export default function Footer() {
         {' - '}
         {getFooterCopy()}
       </p>
-    </footer>
+    </section>
   );
 }

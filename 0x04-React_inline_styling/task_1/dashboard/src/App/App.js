@@ -15,12 +15,12 @@ const styles = StyleSheet.create({
     fontFamily: 'Verdana',
     margin: '1rem',
     scrollBehavior: 'smooth',
-    fontSize: '62.5%',
   },
   smallSize: {
     fontSize: '1rem',
   },
   mainContent: {
+    // paddingTop: '1rem',
     borderTop: '3px #e11d3f solid',
   },
   footer: {
@@ -95,8 +95,9 @@ class App extends Component {
             <p className={css(styles.smallSize)}>some random text</p>
           </BodySection>
         </main>
-        {/* style not working */}
-        <Footer className={css(styles.footer)} />
+        <footer className={css(styles.footer)}>
+          <Footer />
+        </footer>
       </div>
     );
   }

@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './Notifications.css'; // for NotificationItems.js
 import { StyleSheet, css } from 'aphrodite';
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
   },
 });
 
-class Notifications extends PureComponent {
+class Notifications extends Component {
   // Methods, variables, and rendering of Notifications class component
 
   constructor() {
