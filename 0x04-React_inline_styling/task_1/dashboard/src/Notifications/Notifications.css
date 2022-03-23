@@ -1,0 +1,12 @@
+/* Bullet Points */
+li {
+  font-size: 1.2rem;
+}
+
+li[data-notification-type="default"] {
+  color: blue;
+}
+
+li[data-notification-type="urgent"] {
+  color: red;
+}
