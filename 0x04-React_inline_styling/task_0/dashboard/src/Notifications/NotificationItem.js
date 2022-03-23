@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
-const NotificationItem = function NotificationItem({
-  type, html, value, markAsRead,
-}) {
-  // ESLint attempts - not able to split lines properly
+function NotificationItem(props) {
+  // Definition of props
+  const {
+    type, value, html, markAsRead,
+  } = props;
+
   if (value) {
     return (
       <li
@@ -22,7 +24,7 @@ const NotificationItem = function NotificationItem({
       onClick={markAsRead}
     />
   );
-};
+}
 
 NotificationItem.propTypes = {
   type: PropTypes.string,
@@ -30,14 +32,16 @@ NotificationItem.propTypes = {
   html: PropTypes.shape({
     __html: PropTypes.string,
   }),
-  markAsRead: PropTypes.func.isRequired,
+  markAsRead: PropTypes.func,
 };
 
 NotificationItem.defaultProps = {
   type: 'default',
-  value: null,
-  html: null,
+  value: '',
+  html: {
+    __html: '',
+  },
   markAsRead: () => {},
 };
 
-export default NotificationItem;
+export default memo(NotificationItem);

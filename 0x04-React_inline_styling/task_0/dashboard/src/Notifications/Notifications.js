@@ -1,12 +1,11 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-// import { render } from 'enzyme';
 import './Notifications.css';
 import closeIcon from '../assets/close-icon.png';
 import NotificationItem from './NotificationItem';
 import NotificationItemShape from './NotificationItemShape';
 
-class Notifications extends PureComponent {
+class Notifications extends Component {
   // Methods, variables, and rendering of Notifications class component
 
   constructor() {

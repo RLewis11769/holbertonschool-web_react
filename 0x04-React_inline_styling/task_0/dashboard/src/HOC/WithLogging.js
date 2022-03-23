@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 
-function getDisplayName(WrappedComponent) {
-  return WrappedComponent.displayName || WrappedComponent.name || 'Component';
-}
-
 function WithLogging(WrappedComponent) {
+  // Find name to print in console messages
+  const name = WrappedComponent.name ? WrappedComponent.name : 'Component';
+
   class InnerWithLogging extends Component {
     componentDidMount() {
-      console.log(`Component ${WrappedComponent} is mounted`);
+      console.log(`Component ${name} is mounted`);
     }
 
     componentWillUnmount() {
-      console.log(`Component ${WrappedComponent} is going to unmount`);
+      console.log(`Component ${name} is going to unmount`);
     }
 
     render() {
@@ -19,7 +18,6 @@ function WithLogging(WrappedComponent) {
     }
   }
 
-  InnerWithLogging.displayName = `WithLogging(${getDisplayName(WrappedComponent)})`;
   return InnerWithLogging;
 }
 
