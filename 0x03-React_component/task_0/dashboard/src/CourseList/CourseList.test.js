@@ -5,6 +5,11 @@ import CourseList from './CourseList';
 describe('CourseList component', () => {
   // Tests for CourseList component
 
+  const listCourses = [
+    { id: '1', name: 'Course 1', credit: 1 },
+    { id: '2', name: 'Course 2', credit: 2 },
+  ];
+
   it('Verifies that CourseList component renders without crashing', () => {
     shallow(<CourseList />);
   });
@@ -26,10 +31,6 @@ describe('CourseList component', () => {
   });
 
   it('Verifies that 4 CourseListRows rendered correctly with 2 courses passed', () => {
-    const listCourses = [
-      { id: 1, name: 'Course 1', credit: 1 },
-      { id: 2, name: 'Course 2', credit: 2 },
-    ];
     const wrapper = shallow(<CourseList listCourses={listCourses} />);
     expect(wrapper.find('CourseListRow').length).toBe(4);
     expect(wrapper.find('CourseListRow').get(2).props.textFirstCell).toBe(

@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const NotificationItem = function NotificationItem({ type, html, value }) {
-  if (value) return <li data-notification-type={type}>{value}</li>;
-  return <li data-notification-type={type} dangerouslySetInnerHTML={html} />;
+  if (value) return <li data-notification-type={type} dangerouslySetInnerHTML={html}>{value}</li>;
 };
 
 NotificationItem.propTypes = {

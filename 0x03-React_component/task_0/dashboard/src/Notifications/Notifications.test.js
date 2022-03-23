@@ -5,6 +5,11 @@ import Notifications from './Notifications';
 describe('Notifications component', () => {
   // Tests for Notifications component in Notifications.js
 
+  const listNotifications = [
+    { id: 1, type: 'urgent', value: 'Value 1' },
+    { id: 2, type: 'default', html: { __html: 'HTML 1' } },
+  ];
+
   it('Verifies that renders Notifications component without crashing', () => {
     shallow(<Notifications />);
   });
@@ -38,15 +43,6 @@ describe('Notifications component', () => {
     expect(wrapper.find('p').text()).toEqual('No new notification for now');
   });
 
-  it('Verifies that Notifications renders p tag correctly with empty listNotifications', () => {
-    const wrapper = shallow(<Notifications displayDrawer listNotifications={['']} />);
-    expect(wrapper.find('p').text()).toEqual('Here is the list of notifications');
-  });
-
-  const listNotifications = [
-    { id: 1, type: 'urgent', value: 'Value 1' },
-    { id: 2, html: { __html: 'HTML 1' } },
-  ];
   it('Verifies that Notifications renders 2 NotificationItem correctly when passed listNotifications', () => {
     const wrapper = shallow(<Notifications displayDrawer listNotifications={listNotifications} />);
     expect(wrapper.find('NotificationItem').length).toBe(2);
