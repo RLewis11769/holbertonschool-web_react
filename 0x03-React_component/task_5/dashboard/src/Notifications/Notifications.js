@@ -1,12 +1,11 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-// import { render } from 'enzyme';
 import './Notifications.css';
 import closeIcon from '../assets/close-icon.png';
 import NotificationItem from './NotificationItem';
 import NotificationItemShape from './NotificationItemShape';
 
-class Notifications extends PureComponent {
+class Notifications extends Component {
   // Methods, variables, and rendering of Notifications class component
 
   constructor() {
@@ -14,11 +13,13 @@ class Notifications extends PureComponent {
     this.markAsRead = this.markAsRead.bind(this);
   }
 
+  // OVerriding in-built lifecycle method that defines when component should re-render
   shouldComponentUpdate(nextProps) {
     const { listNotifications } = this.props;
     return nextProps.listNotifications.length > listNotifications.length;
   }
 
+  // Custom method passed to NotificationItem component
   markAsRead(id) {
     console.log(`Notification ${id} has been marked as read`);
   }
