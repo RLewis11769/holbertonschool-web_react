@@ -12,7 +12,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     // width: props.clicked ? '100vh' : 'auto',
     // height: props.clicked ? '100vh' : 'auto',
-    paddingBottom: '100vh',
     '@media (min-width: 900px)': {
       marginRight: '1rem',
       float: 'right',
