@@ -31,6 +31,11 @@ const styles = StyleSheet.create({
     right: 45,
     top: 65,
   },
+  closeImg: {
+    border: 0,
+    height: 15,
+    width: 15,
+  },
 });
 
 class Notifications extends Component {
@@ -82,10 +87,8 @@ class Notifications extends Component {
             >
               <img
                 src={closeIcon}
-                border="0"
-                height="15px"
-                width="15px"
                 alt="Close"
+                className={css(styles.closeImg)}
               />
             </button>
           </div>
