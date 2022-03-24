@@ -11,7 +11,6 @@ const styles = StyleSheet.create({
     border: '1px solid lightgrey',
     width: '100%',
     textAlign: 'left',
-    fontSize: '1rem',
   },
   thead: {
     fontWeight: 'bold',

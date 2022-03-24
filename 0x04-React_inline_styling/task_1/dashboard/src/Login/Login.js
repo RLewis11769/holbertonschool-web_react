@@ -6,9 +6,6 @@ const styles = StyleSheet.create({
     marginLeft: '2rem',
     marginTop: '3rem',
   },
-  smallSize: {
-    fontSize: '1rem',
-  },
   form: {
     display: 'flex',
     alignItems: 'center',
@@ -37,13 +34,13 @@ const styles = StyleSheet.create({
 export default function Login() {
   return (
     <div className={css(styles.Login)}>
-      <p className={css(styles.smallSize)}>Login to access the full dashboard</p>
+      <p>Login to access the full dashboard</p>
       <div className={css(styles.form)}>
         <label className={css(styles.smallSize)} htmlFor="email">
           Email:
           <input className={css(styles.input)} type="email" placeholder="Email" id="email" />
         </label>
-        <label className={css(styles.smallSize)} htmlFor="pw">
+        <label htmlFor="pw">
           Password:
           <input className={css(styles.input)} type="password" placeholder="Password" id="pw" />
         </label>

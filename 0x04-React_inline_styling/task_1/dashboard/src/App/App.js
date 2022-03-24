@@ -16,11 +16,7 @@ const styles = StyleSheet.create({
     margin: '1rem',
     scrollBehavior: 'smooth',
   },
-  smallSize: {
-    fontSize: '1rem',
-  },
   mainContent: {
-    // paddingTop: '1rem',
     borderTop: '3px #e11d3f solid',
   },
   footer: {
@@ -92,7 +88,7 @@ class App extends Component {
           )}
           {/* Temp section */}
           <BodySection title="News from the School">
-            <p className={css(styles.smallSize)}>some random text</p>
+            <p>some random text</p>
           </BodySection>
         </main>
         <footer className={css(styles.footer)}>

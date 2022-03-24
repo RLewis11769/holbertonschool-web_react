@@ -14,15 +14,11 @@ const styles = StyleSheet.create({
   },
   menuItem: {
     alignSelf: 'flex-end',
-    fontSize: '1rem',
     marginBottom: '1rem',
   },
   notifs: {
     border: '1px red dashed',
     padding: '1rem 7rem 2rem 2rem',
-  },
-  smallSize: {
-    fontSize: '1rem',
   },
   closeBtn: {
     border: 0,
@@ -64,8 +60,8 @@ class Notifications extends Component {
         {displayDrawer && (
           <div className={css(styles.notifs)} id="Notifs">
             {listNotifications.length
-              ? <p className={css(styles.smallSize)}>Here is the list of notifications</p>
-              : <p className={css(styles.smallSize)}>No new notification for now</p>}
+              ? <p>Here is the list of notifications</p>
+              : <p>No new notification for now</p>}
             {listNotifications ? (
               listNotifications.map((notif) => (
                 <NotificationItem
