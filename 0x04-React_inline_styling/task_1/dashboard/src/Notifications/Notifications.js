@@ -24,6 +24,13 @@ const styles = StyleSheet.create({
   smallSize: {
     fontSize: '1rem',
   },
+  closeBtn: {
+    border: 0,
+    background: 'transparent',
+    position: 'absolute',
+    right: 45,
+    top: 65,
+  },
 });
 
 class Notifications extends Component {
@@ -50,8 +57,9 @@ class Notifications extends Component {
       <div className={css(styles.Notif)}>
         <div className={css(styles.menuItem)} id="menuItem">Your Notifications</div>
         {displayDrawer && (
-          <div className={styles.notifs} id="Notifs">
-            {listNotifications.length ? <p className={css(styles.smallSize)}>Here is the list of notifications</p>
+          <div className={css(styles.notifs)} id="Notifs">
+            {listNotifications.length
+              ? <p className={css(styles.smallSize)}>Here is the list of notifications</p>
               : <p className={css(styles.smallSize)}>No new notification for now</p>}
             {listNotifications ? (
               listNotifications.map((notif) => (
@@ -69,14 +77,8 @@ class Notifications extends Component {
             <button
               type="button"
               aria-label="Close"
+              className={css(styles.closeBtn)}
               onClick={() => console.log('Close button has been clicked')}
-              style={{
-                border: 0,
-                background: 'transparent',
-                position: 'absolute',
-                right: 25,
-                top: 50,
-              }}
             >
               <img
                 src={closeIcon}
