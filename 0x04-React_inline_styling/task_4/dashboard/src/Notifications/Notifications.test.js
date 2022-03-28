@@ -13,13 +13,6 @@ describe('Notifications component', () => {
     StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
   });
 
-  beforeEach(() => {
-    StyleSheetTestUtils.suppressStyleInjection();
-  });
-  afterEach(() => {
-    StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
-  });
-
   const listNotifications = [
     { id: 1, type: 'urgent', value: 'Value 1' },
     { id: 2, type: 'default', html: { __html: 'HTML 1' } },
@@ -35,7 +28,7 @@ describe('Notifications component', () => {
   });
 
   // displayDrawer tests
-  it('Verifies that Notifications contains .menuItem div by default (displayDrawer false)', () => {
+  it('Verifies that Notifications contains #menuItem div by default (displayDrawer false)', () => {
     const wrapper = shallow(<Notifications />);
     expect(wrapper.find('#menuItem').length).toBe(1);
     expect(wrapper.find('#Notifs').length).toBe(0);
@@ -64,7 +57,7 @@ describe('Notifications component', () => {
   });
 
   // This test began failing out of nowhere? Please figure out why
-  it.skip('Verifies that Notifications renders 2 NotificationItem correctly when passed listNotifications', () => {
+  it.skip('Verifies that Notifications renders 2 NotificationItems correctly when passed listNotifications', () => {
     const wrapper = shallow(<Notifications displayDrawer listNotifications={listNotifications} />);
     expect(wrapper.find('li').length).toBe(2);
     expect(wrapper.find('p').text()).toEqual('Here is the list of notifications');

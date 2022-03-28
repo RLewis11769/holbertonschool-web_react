@@ -89,9 +89,9 @@ class Notifications extends Component {
 
     return (
       <div className={css(styles.Notif)}>
-        <div className={css(styles.menuItem, styles.animation)}>Your Notifications</div>
+        <div id="menuItem" className={css(styles.menuItem, styles.animation)}>Your Notifications</div>
         {displayDrawer && (
-          <div className={css(styles.notifList)}>
+          <div id="Notifs" className={css(styles.notifList)}>
             {listNotifications.length
               ? <p>Here is the list of notifications</p>
               : <p>No new notification for now</p>}
