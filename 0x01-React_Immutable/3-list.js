@@ -7,7 +7,7 @@ export function getListObject(array) {
 
 export function addElementToList(list, element) {
   // Appends element to list
-  return [...list, element];
+  return list.push(element);
 }
 
 // console.log(getListObject([1, 2, 3]));
