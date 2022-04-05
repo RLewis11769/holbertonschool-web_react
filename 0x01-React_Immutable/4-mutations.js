@@ -1,5 +1,4 @@
 import { Map } from 'immutable';
-// import { withMutations } from 'immutable';
 
 export const map = Map({
   1: 'Liam',
@@ -11,7 +10,7 @@ export const map = Map({
 });
 
 // Convert index 2 to 'Ethan' and index 3 to 'Mason'
-export const map2 = map.withMutations(idx => {
+export const map2 = map.withMutations((idx) => {
   idx.set(2, 'Benjamin');
   idx.set(4, 'Oliver');
 });
