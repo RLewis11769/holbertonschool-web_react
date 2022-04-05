@@ -1,9 +1,9 @@
 // Access nested elements of an immutable object
-import { Map, getIn } from 'immutable';
+import { getIn } from 'immutable';
 
 export default function accessImmutableObject(object, array) {
   // getIn returns value at provided path starting at provided object
-  return getIn(Map(object), array);
+  return getIn(object, array);
 }
 
 // // JS way - not Immutable.js way
