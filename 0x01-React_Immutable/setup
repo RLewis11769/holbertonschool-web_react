@@ -44,7 +44,8 @@ echo '{
   },
   "dependencies": {
     "immutable": "^4.0.0-rc.12"
-  }
+  },
+  "type": "module"
 }' > package.json
 
 npm i
