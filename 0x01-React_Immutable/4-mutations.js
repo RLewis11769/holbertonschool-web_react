@@ -9,8 +9,7 @@ export const map = Map({
   6: 'Lucas',
 });
 
-// Convert index 2 to 'Ethan' and index 3 to 'Mason'
+// Convert index 2 to 'Benjamin' and index 4 to 'Oliver'
 export const map2 = map.withMutations((idx) => {
-  idx.set(2, 'Benjamin');
-  idx.set(4, 'Oliver');
+  idx.set(2, 'Benjamin').set(4, 'Oliver');
 });
