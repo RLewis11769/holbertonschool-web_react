@@ -127,17 +127,17 @@ describe('mapStateToProps tests - based on Redux uiReducer', () => {
     StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
   });
 
-  it('Verifies that state isUserLoggedIn returns isLoggedIn', () => {
+  it('Verifies that state displayNotificationDrawer returns displayDrawer', () => {
     const state = fromJS({
       isUserLoggedIn: true,
     });
-    expect(mapStateToProps(state)).toEqual({ isLoggedIn: true });
+    expect(mapStateToProps(state).isLoggedIn).toEqual(true);
   });
 
   it('Verifies that state displayNotificationDrawer returns displayDrawer', () => {
     const state = fromJS({
       isNotificationDrawerVisible: true,
     });
-    expect(mapStateToProps(state)).toEqual({ displayDrawer: true });
+    expect(mapStateToProps(state).displayDrawer).toEqual(true);
   });
 });
