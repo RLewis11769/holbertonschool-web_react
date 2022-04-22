@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import App from './App/App';
-import uiReducer from './reducers/uiReducer';
+import uiReducer, { initialState } from './reducers/uiReducer';
 
-const store = createStore(uiReducer);
+const store = createStore(uiReducer, initialState);
 
 ReactDOM.render(
   <React.StrictMode>
