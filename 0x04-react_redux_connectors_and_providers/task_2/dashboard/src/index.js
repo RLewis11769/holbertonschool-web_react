@@ -4,9 +4,9 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import App from './App/App';
-import uiReducer from './reducers/uiReducer';
+import uiReducer, { initialState } from './reducers/uiReducer';
 
-const store = createStore(uiReducer, applyMiddleware(thunk));
+const store = createStore(uiReducer, initialState, applyMiddleware(thunk));
 
 ReactDOM.render(
   <React.StrictMode>

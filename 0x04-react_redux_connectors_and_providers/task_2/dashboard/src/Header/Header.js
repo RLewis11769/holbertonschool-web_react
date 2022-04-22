@@ -44,7 +44,7 @@ const Header = function Header({ isUserLoggedIn, user, logout }) {
       <img className={css(styles.imgSize)} src={logo} alt="logo" />
       <div className={css(styles.titleDiv)}>
         <h1>School dashboard</h1>
-        {isUserLoggedIn ? (
+        {user ? (
           <div id="logoutSection">
             <p>
               Welcome
@@ -78,7 +78,7 @@ Header.propTypes = {
 
 Header.defaultProps = {
   isUserLoggedIn: false,
-  user: {},
+  user: null,
   logout: () => {},
 };
 

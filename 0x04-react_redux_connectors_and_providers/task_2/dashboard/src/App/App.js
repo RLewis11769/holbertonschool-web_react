@@ -158,7 +158,7 @@ export function mapStateToProps(state) {
   return {
     isLoggedIn: state.toJS().isUserLoggedIn,
     displayDrawer: state.toJS().isNotificationDrawerVisible,
-    // login: loginRequest,
+    login: loginRequest,
   };
 }
 
@@ -167,7 +167,7 @@ function mapDispatchToProps(dispatch) {
   return {
     displayNotificationDrawer: () => dispatch(displayNotificationDrawer()),
     hideNotificationDrawer: () => dispatch(hideNotificationDrawer()),
-    login: (...args) => dispatch(loginRequest(...args)),
+    // login: (...args) => dispatch(loginRequest(...args)),
   };
 }
 

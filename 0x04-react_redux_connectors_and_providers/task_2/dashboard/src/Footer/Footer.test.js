@@ -2,6 +2,11 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Footer from './Footer';
 
+const testUser = {
+  name: 'name',
+  email: 'email@email.com',
+};
+
 describe('Footer component', () => {
   // Tests for Footer component
 
@@ -22,18 +27,14 @@ describe('Footer component', () => {
   it('Verifies that no links displayed when isUserLoggedIn changes', () => {
     const wrapper = shallow(<Footer />);
     wrapper.setProps({
-      user: {},
+      user: null,
       isUserLoggedIn: false,
     });
     expect(wrapper.find('a').length).toEqual(0);
   });
 
   it('Verifies that links displayed when isUserLoggedIn props passed in', () => {
-    const user = {
-      name: 'name',
-      email: 'email@email.com',
-    };
-    const wrapper = shallow(<Footer user={user} isUserLoggedIn />);
+    const wrapper = shallow(<Footer user={testUser} isUserLoggedIn />);
     expect(wrapper.find('a').length).toEqual(1);
   });
 });

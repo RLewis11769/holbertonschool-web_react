@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getFullYear, getFooterCopy } from '../utils/utils';
 
-function Footer({ isUserLoggedIn }) {
+function Footer({ user }) {
   return (
     <section id="footer">
       Copyright
@@ -12,7 +12,7 @@ function Footer({ isUserLoggedIn }) {
       {' - '}
       {getFooterCopy()}
       {
-        isUserLoggedIn ? (
+        user ? (
           <p>
             <a href="https://github.com/RLewis11769" target="_blank" rel="noreferrer">Contact us</a>
           </p>
@@ -33,7 +33,7 @@ Footer.propTypes = {
 
 Footer.defaultProps = {
   isUserLoggedIn: false,
-  user: {},
+  user: null,
 };
 
 function mapStateToProps(state) {
